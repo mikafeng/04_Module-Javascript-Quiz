@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Setting Attributes</title>
+    <title>Timed Quiz</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href=assets/style.css>
@@ -17,13 +17,14 @@
                 <!-- <img/> -->
             </a>
             <button id="startQuiz">START</button>
-            <div>Question.</div>
-            <p>We can change any element just by grabbing it via the DOM.</p>
-            <a href="" class="button">Answer 1</a>
-            <a href="" class > Answer 2</a>
-            <a href="">Answer 3</a>
-            <div class="change1">Correct or Incorrect.</div>
-            <p id="countDown"></p>
+            <div class="question-container" id="quiz">Question</div>
+            <div class="option-container">
+            <button class="option" id="1">1</button>
+            <button class="option" id="2">2</button>
+            <button class="option" id="3">3</button>
+            </div> 
+            <p id="countDown">Timer</p>
+            <div class="result">Results</div>
         </div>
     </section>
 
