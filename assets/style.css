@@ -16,6 +16,10 @@ body {
     background-color: #f0ead6;
   }
 
+  #card-contents {
+
+  };
+
   @media screen and (min-width: 600px) {
     img {
         min-width: 60%;
