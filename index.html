@@ -9,24 +9,31 @@
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href=assets/style.css>
 </head>
+
 <body>
     <h1 class="title">JavaScript Quiz</h1>
+
     <section class="container">
         <div class="quiz-box" id="quiz">
-            <button id="startQuiz">START</button>
+            <button id="startBtn">START</button>
+           
+            <div class="hidden" id="progress">Question x of y</div> 
+            <p class="hidden" id="question">What is your name</p>
 
-            <div id="progress">Question x of y</div> 
+            <div class="hidden buttons" id="option">
 
-            <p id="question">What is your name</p>
-
-            <div class="buttons">
-
-            <button class="option btn" id="btn0">1</button>
-            <button class="option btn" id="btn2">2</button>
-            <button class="option btn" id="btn3">3</button>
+            <button class="btn" id="btn0">
+                <span class="choices choice0" data-number="0">A</span>
+            </button>
+            <button class="btn" id="btn2">
+                <span class="choices choice1" data-number="0">B</span>
+            </button>
+            <button class="btn" id="btn3">
+                <span class="choices choice2" data-number="0">C</span>
+            </button>
             </div> 
 
-            <p id="countdown">Timer</p>
+            <p id="countDown"></p>
             <div class="result">Results</div>
         </div>
     </section>
