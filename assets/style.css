@@ -2,23 +2,87 @@ body {
     background-color: white
   }
 
-.title {
+h1 {
+    margin: auto; 
     text-align: center;
+    padding: 1rem, 0;
+
 }
 .container {
     display: block;
     margin: 80px auto;
-    text-align: center;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     width: 60vw;
     padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #f0ead6;
   }
 
-  #card-contents {
+.quiz-box {
+  width: 600px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 1rem 5rem 5rem 5rem;
+  border: 3px solid var(--color-primary);
+  border-radius: 5px;
+}
 
-  };
+#progress {
+ color: darkgray;
+ font-size: 1.6rem;
+ font-weight: 700;
+}
+
+.quiz-box #question {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: orange;
+  border: 1px solid gray;
+  border-width: 1px 0;
+  padding: 5px 0;
+}
+
+.buttons {
+  margin: 1.5rem 0 4rem;
+}
+
+.btn {
+  text-align: left;
+  background-color: white;
+  width: 100%;
+  font-size: 1.8rem;
+  color: black;
+  border: 1px solid purple;
+  border-radius: 5px;
+  margin: 7px 0;
+  outline: none;
+}
+
+.btn:hover{
+  cursor: pointer;
+  background-color: purple;
+  color: white;
+}
+
+.btn:active{
+  background-color: orange ;
+  color: white;
+
+}
+
+
+#countdown {
+  font-size: 1.6rem;
+  font-weight: 700;
+  background-color: orange;
+  padding: 5px;
+  margin: 1px;
+  color: white;
+  border-radius: 3px;
+}
 
   @media screen and (min-width: 600px) {
     img {

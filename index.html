@@ -12,18 +12,21 @@
 <body>
     <h1 class="title">JavaScript Quiz</h1>
     <section class="container">
-        <div id="card-contents"></div>
-            <a>
-                <!-- <img/> -->
-            </a>
+        <div class="quiz-box" id="quiz">
             <button id="startQuiz">START</button>
-            <div class="question-container" id="quiz">Question</div>
-            <div class="option-container">
-            <button class="option" id="1">1</button>
-            <button class="option" id="2">2</button>
-            <button class="option" id="3">3</button>
+
+            <div id="progress">Question x of y</div> 
+
+            <p id="question">What is your name</p>
+
+            <div class="buttons">
+
+            <button class="option btn" id="btn0">1</button>
+            <button class="option btn" id="btn2">2</button>
+            <button class="option btn" id="btn3">3</button>
             </div> 
-            <p id="countDown">Timer</p>
+
+            <p id="countdown">Timer</p>
             <div class="result">Results</div>
         </div>
     </section>

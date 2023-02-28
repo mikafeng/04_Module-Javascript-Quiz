@@ -1,10 +1,15 @@
 //clickevent for start button
 //timer doesn't start until clickevent
+//array of questions
+
 var quizButton = document.getElementById("startQuiz");
 var timeEl = document.getElementById("countDown");
 var quizContainer = document.getElementById("quiz");
 var showResults = document.getElementById("results");
+
 var timeLeft = 30;
+
+var questions = []
 
 //make 30 secs in min.sec format and change to start time 3min00sec
 function countDown(){
