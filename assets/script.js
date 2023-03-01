@@ -9,7 +9,9 @@ var timeEl = document.getElementById("countDown");
 var results = document.getElementById("results");
 var progressEl = document.getElementById("progress");
 var questionEl = document.getElementById("question");
-var choicesEl = document.getElementById("option");
+// var choicesEl = document.getElementById("option");
+var answersEl = document.getElementById("answers")
+var currentQIndex;
 
 var timeLeft = 60;
 
@@ -18,34 +20,50 @@ var timeLeft = 60;
 var questionCount = 0;
 var score = 0;
 
-// hide elmnt
+//FUNCTION hide element
 function hide(element) {
     element.style.display = "none";
 }
 
-// display elmnt
+//FUNCTION display element
 function show(element) {
     element.style.display = "block";
 }
 
+//startBTN Event Listener
 startBtn.addEventListener("click", function(){
     startQuiz();
     hide(startBtn);
     show(progress);
-    show(question);
-    show(option);
+    show(questionEl);
+    show(answers);
     show(results);
 });
 
+//FUNCTION quiz starts
 function startQuiz () {
-
     questionCount = 0;
     score = 0;
-    questions = [...questions];
-    console.log(questions);
+    currentQIndex = 0;
+    renderQs();
+    // questions = [...questions];
+    // console.log(questions);
     countDown();
 };
 
+//FUNCTION render question
+function renderQs() {
+    showQ(questions[currentQIndex]);
+    // for(let i=0; i<questions.length; i++) {
+    //     console.log(questions[i]);
+    // }
+};
+
+function showQ(question) {
+    questionEl.innerText = question.question
+};
+
+//FUNCTION timer starts
 function countDown(){
 
     var timerInterval = setInterval(function(){
@@ -53,13 +71,14 @@ function countDown(){
         timeEl.textContent = timeLeft + " seconds left!";
     
     if(timeLeft === 0) {
-        let m = "quiz over";
         clearInterval(timerInterval);
-        displayMessage(m);
+        displayMessage("quiz over");
         }   
 }, 1000)};
 
 
+
+// renderQs();
 
 // function guess(id, guess) {
 //     let button = document.getElementById(id);
@@ -79,29 +98,24 @@ function countDown(){
 //show score
 
 //create quiz questions
-let questions = [
+//QUESTIONS array
+const questions = [
     {
-        "question": "Inside which HTML element do we put the JavaScript??",
-        "choice1": "<script>",
-        "choice2": "<javascript>",
-        "choice3": "<js>",
-        "answer": 1
+        question: "Inside which HTML element do we put the JavaScript??",
+        choices: ["<script>", "<javascript>", "<js>"],
+        answer: 1
     },
     {
         "question": "What is the correct syntax for referring to an external script called 'xxx.js'?",
-        "choice1": "<script href='xxx.js'>",
-        "choice2": "<script name='xxx.js'>",
-        "choice3": "<script src='xxx.js'>",
-        "answer": 3
+        "choices": ["<script href='xxx.js'>", "<script name='xxx.js'>", "<script src='xxx.js'>"],
+        "answer": 2
     },
     {
         "question": " How do you write 'Hello World' in an alert box?",
-        "choice1": "msgBox('Hello World');",
-        "choice2": "alertBox('Hello World');",
-        "choice3": "alert('Hello World');",
-        "answer": 3
+        "choices": ["msgBox('Hello World');", "alertBox('Hello World');", "alert('Hello World');"],
+        "answer": 0
     }
-]
+];
 
 // let quiz = new Quiz(questions);
 
