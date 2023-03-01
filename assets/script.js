@@ -6,7 +6,7 @@
 var startBtn = document.getElementById("startBtn");
 var quizContainer = document.getElementById("quiz");
 var timeEl = document.getElementById("countDown");
-var showResults = document.getElementById("results");
+var results = document.getElementById("results");
 var progressEl = document.getElementById("progress");
 var questionEl = document.getElementById("question");
 var choicesEl = document.getElementById("option");
@@ -18,14 +18,27 @@ var timeLeft = 60;
 var questionCount = 0;
 var score = 0;
 
+// hide elmnt
+function hide(element) {
+    element.style.display = "none";
+}
 
-startBtn.addEventListener("click", startQuiz)
+// display elmnt
+function show(element) {
+    element.style.display = "block";
+}
+
+startBtn.addEventListener("click", function(){
+    startQuiz();
+    hide(startBtn);
+    show(progress);
+    show(question);
+    show(option);
+    show(results);
+});
 
 function startQuiz () {
-    startBtn.classList.add('hidden');
-    progressEl.classList.remove('hidden');
-    questionEl.classList.remove('hidden');
-    choicesEl.classList.remove('hidden');
+
     questionCount = 0;
     score = 0;
     questions = [...questions];
@@ -40,8 +53,9 @@ function countDown(){
         timeEl.textContent = timeLeft + " seconds left!";
     
     if(timeLeft === 0) {
+        let m = "quiz over";
         clearInterval(timerInterval);
-        displayMessage("time out");
+        displayMessage(m);
         }   
 }, 1000)};
 
