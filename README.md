@@ -9,6 +9,16 @@ They are presented with multiple choice answer. Time is subtracted from the cloc
 
 At the end of the quiz, either when the time or questions run out, users may enter their initials and log their score to memory.
 
+## Access
+Click HERE to open up the quiz in your browser.
 
 ## View
+
+
+##License
+
+MIT License
+
+Copyright (c) 2023 mikafeng
+
 
