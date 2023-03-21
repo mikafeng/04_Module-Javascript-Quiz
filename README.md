@@ -15,7 +15,7 @@ Click HERE to open up the quiz in your browser.
 ## View
 
 
-##License
+## License
 
 MIT License
 
