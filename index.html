@@ -16,25 +16,24 @@
     </div>
 
     <section class="container">
-        <div class="quiz-box" id="quiz" style="display: none">
+        <div class="quiz-box " id="quiz">
             <button id="startBtn">START</button>
 
-                <p id="questionPrompt" class="font-weight-bold"></p>
+            <p id="questionPrompt" class="font-weight-bold" style="display: none"></p>
 
-                <div id="choices" class="buttons justify-content-center">
+                <div id="choices" class="row justify-content-center" style="display: none">
                     <button class="btn" id="0">A</button>
                     <button class="btn" id="1">B</button>
                     <button class="btn" id="2">C</button>
                 </div> 
+
+            <p id="countDown" class="row"></p>
+            <div id="checkAnswer" style="display: none">Wrong/Correct</div>  
         </div>
-
-        <p id="countDown"></p>
-
-        <div id="checkAnswer" style="display: none">Wrong/Correct</div>
     </section>
 
 
-    
+
     <script src="assets/script.js"></script>
 </body>
 </html>

@@ -6,8 +6,7 @@
 var startBtn = document.getElementById("startBtn");
 var quizContainer = document.getElementById("quiz");
 var timeEl = document.getElementById("countDown");
-var results = document.getElementById("results");
-var progressEl = document.getElementById("progress");
+var result = document.getElementById("checkAnswer");
 var questionEl = document.getElementById("questionPrompt");
 var choicesEl = document.getElementById("choices");
 var answerEl = document.getElementById("answer");
@@ -34,10 +33,9 @@ function show(element) {
 startBtn.addEventListener("click", function(){
     startQuiz();
     hide(startBtn);
-    show(progress);
     show(questionEl);
-    show(answers);
-    show(results);
+    show(choicesEl);
+    show(result);
 });
 
 //FUNCTION quiz starts
@@ -46,7 +44,7 @@ function startQuiz () {
     score = 0;
     currentQIndex = 0;
     // questions = [...questions];
-    renderQs();
+    // renderQs();
     // console.log(questions);
     countDown();
 
@@ -111,14 +109,13 @@ function countDown(){
 
 
 
-function renderQs() {
-    questions.textContent = questions[currentQIndex].question;
-    choiceA.textContent = questions[currentQIndex].choices[0];
-    choiceB.textContent = questions[currentQIndex].choices[1];
-    choiceC.textContent = questions[currentQIndex].choices[2];
-}
+// function renderQs() {
+//     questions.textContent = questions[currentQIndex].question;
+//     choiceA.textContent = questions[currentQIndex].choices[0];
+//     choiceB.textContent = questions[currentQIndex].choices[1];
+//     choiceC.textContent = questions[currentQIndex].choices[2];
+// }
 
-renderQs();
 
 // function guess(id, guess) {
 //     let button = document.getElementById(id);
@@ -192,6 +189,6 @@ const questions = [
 
 
 //event listeners
-choiceA.addEventListener("click", chooseA);
-choiceB.addEventListener("click", chooseB);
-choiceC.addEventListener("click", chooseC);
+// choiceA.addEventListener("click", chooseA);
+// choiceB.addEventListener("click", chooseB);
+// choiceC.addEventListener("click", chooseC);
