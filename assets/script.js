@@ -46,9 +46,10 @@ function startQuiz () {
     score = 0;
     currentQIndex = 0;
     // questions = [...questions];
-
+    renderQs();
     // console.log(questions);
     countDown();
+
 };
 
 
@@ -112,11 +113,12 @@ function countDown(){
 
 function renderQs() {
     questions.textContent = questions[currentQIndex].question;
-    for (i = 0; i < answersEl.children.length; i++) {
-        answersEl.children[i].children[0].textContent = `${(i + 1)}: ${questions[currentQIndex].choices[i]}`;
-    }
+    choiceA.textContent = questions[currentQIndex].choices[0];
+    choiceB.textContent = questions[currentQIndex].choices[1];
+    choiceC.textContent = questions[currentQIndex].choices[2];
 }
-// renderQs();
+
+renderQs();
 
 // function guess(id, guess) {
 //     let button = document.getElementById(id);
@@ -152,6 +154,15 @@ const questions = [
         "c. <js>"
         ],
         answer: "a. <script>"
+    },
+    {
+        question: "Which of the following is NOT a primitive data type?",
+        choices: [
+            "a. strings",
+            "b. booleans",
+            "c. alerts"
+        ],
+        answer: "c. alerts"
     },
     {
         question: "What is the correct syntax for referring to an external script called 'xxx.js'?",
