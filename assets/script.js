@@ -90,6 +90,14 @@ function checkAnswer(answer) {
     }
 };
 
+//when click invoke function to check Answer
+function chooseA(){ checkAnswer(0); }
+function chooseB() { checkAnswer(1); }
+function chooseC() { checkAnswer(2); }
+
+choiceA.addEventListener("click", chooseA);
+choiceB.addEventListener("click", chooseB);
+choiceC.addEventListener("click", chooseC);
 // function showQ(question) {
 //     questionEl.innerText = question.question
 //     question.answers.forEach(answer => {
@@ -121,38 +129,13 @@ function selectAnswer(e) {
 //     }
 }
 
-// function showChoices(answers){
-//     questionEl.innerText = question.choices;
-// }
 
-
-
-
-
-// function guess(id, guess) {
-//     let button = document.getElementById(id);
-//     button.onclick = function () {
-//         quiz.guess(guess);
-//         displayQuestion();
-//     }
-// };
-
-// show progress
-// function showProgress() {
-//     let currentQuestionNumber = quiz.questionIndex + 1;
-//     let progressEl = document.getElementById("progress");
-//     progressEl.innerHTML = `Question ${currentQuestionNumber} of ${quiz.question.length}`;
-// };
 
 //show score
 
 //create quiz questions
 
-function evaluate(){
-    if (correct === true) {
-        button.style
-    }
-}
+
 //QUESTIONS array
 const questions = [
     {
