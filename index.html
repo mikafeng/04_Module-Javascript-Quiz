@@ -16,31 +16,25 @@
     </div>
 
     <section class="container">
-        <div class="quiz-box" id="quiz">
+        <div class="quiz-box" id="quiz" style="display: none">
             <button id="startBtn">START</button>
-           
-            <div id="progress" style="display: none" >Question x of y</div> 
-            <div id="questions" style="display: none"></div>
 
-            <div class="buttons" id="answers" style="display: none">
-<!-- withoutspan -->
-            <button class="btn" id="0">A</button>
-<!-- withspan -->
-            <button class="btn" id="1">
-                <span class="choices choice1" data-number="0">B</span>
-            </button>
-            <button class="btn" id="2">
-                <span class="choices choice2" data-number="0">C</span>
-            </button>
-            </div> 
+                <p id="questionPrompt" class="font-weight-bold"></p>
 
-            <p id="countDown">
-            </p>
-
-            <div id="results" style="display: none">Wrong/Correct</div>
+                <div id="choices" class="buttons justify-content-center">
+                    <button class="btn" id="0">A</button>
+                    <button class="btn" id="1">B</button>
+                    <button class="btn" id="2">C</button>
+                </div> 
         </div>
+
+        <p id="countDown"></p>
+
+        <div id="checkAnswer" style="display: none">Wrong/Correct</div>
     </section>
 
+
+    
     <script src="assets/script.js"></script>
 </body>
 </html>

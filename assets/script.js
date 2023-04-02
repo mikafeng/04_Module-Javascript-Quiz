@@ -8,9 +8,9 @@ var quizContainer = document.getElementById("quiz");
 var timeEl = document.getElementById("countDown");
 var results = document.getElementById("results");
 var progressEl = document.getElementById("progress");
-var questionEl = document.getElementById("questions");
-// var choicesEl = document.getElementById("option");
-var answersEl = document.getElementById("answers")
+var questionEl = document.getElementById("questionPrompt");
+var choicesEl = document.getElementById("choices");
+var answerEl = document.getElementById("answer");
 var currentQIndex;
 
 var timeLeft = 60;
