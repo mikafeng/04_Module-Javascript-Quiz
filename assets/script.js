@@ -4,14 +4,20 @@
 
 //TIMER COUNTDOWN
 var startBtn = document.getElementById("startBtn");
-var quizContainer = document.getElementById("quiz");
 var timeEl = document.getElementById("countDown");
-var result = document.getElementById("checkAnswer");
-var questionEl = document.getElementById("questionPrompt");
-var choicesEl = document.getElementById("choices");
-var answerEl = document.getElementById("answer");
-var currentQIndex;
 
+//Quiz Container
+var quizContainer = document.getElementById("quiz");
+var questionEl = document.getElementById("questionPrompt");
+
+var choicesEl = document.getElementById("choices");
+var choiceA = document.getElementById("btn-0");
+var choiceB = document.getElementById("btn-1");
+var choiceC = document.getElementById("btn-2");
+
+var result = document.getElementById("checkAnswer");
+
+var currentQIndex;
 var timeLeft = 60;
 
 
