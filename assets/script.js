@@ -1,6 +1,4 @@
-//clickevent for start button
-//timer doesn't start until clickevent
-//array of questions
+
 
 //TIMER COUNTDOWN
 var startBtn = document.getElementById("startBtn");
@@ -49,14 +47,26 @@ function startQuiz () {
     questionCount = 0;
     score = 0;
     currentQIndex = 0;
-    // questions = [...questions];
-    // renderQs();
-    // console.log(questions);
+
     countDown();
     renderQs();
 
 };
 
+//start timer
+function countDown(){
+
+    var timerInterval = setInterval(function(){
+        timeLeft--;
+        timeEl.textContent = timeLeft + " seconds left!";
+    
+    if(timeLeft === 0) {
+        clearInterval(timerInterval);
+        displayMessage("quiz over");
+        }   
+}, 1000)};
+
+//render question and choices 
 function renderQs() {
     questionEl.textContent = questions[currentQIndex].question;
     choiceA.textContent = questions[currentQIndex].choices[0];
@@ -64,14 +74,21 @@ function renderQs() {
     choiceC.textContent = questions[currentQIndex].choices[2];
 };
 
-//FUNCTION render question
-// function renderQs() {
-//     showQ(questions[currentQIndex]);
-    // for (i=0; i<answersEl.children.length; i++){
-    //     console.log(answers.children[i]);
-    // }
+function checkAnswer(answer) {
+    if (questions[currentQIndex].answer === questions[currentQIndex].choices[answer]) {
+        result.textContent = "Correct!";
+    } else {
+        result.textContent = "Wrong...";
+    }
 
-// };
+    currentQIndex++
+    if (currentQIndex < questions.length) {
+        renderQs();
+    } else {
+        console.log('game over')
+        // quizOver();
+    }
+};
 
 // function showQ(question) {
 //     questionEl.innerText = question.question
@@ -107,18 +124,6 @@ function selectAnswer(e) {
 // function showChoices(answers){
 //     questionEl.innerText = question.choices;
 // }
-//FUNCTION timer starts
-function countDown(){
-
-    var timerInterval = setInterval(function(){
-        timeLeft--;
-        timeEl.textContent = timeLeft + " seconds left!";
-    
-    if(timeLeft === 0) {
-        clearInterval(timerInterval);
-        displayMessage("quiz over");
-        }   
-}, 1000)};
 
 
 
