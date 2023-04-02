@@ -11,29 +11,32 @@
 </head>
 
 <body>
-    <h1 class="title">JavaScript Quiz</h1>
+    <div class="jumbotron jumbotron-fluid b"> 
+        <h1 class="title">JavaScript Quiz</h1>
+    </div>
 
     <section class="container">
         <div class="quiz-box" id="quiz">
             <button id="startBtn">START</button>
            
             <div id="progress" style="display: none" >Question x of y</div> 
-            <div id="question" style="display: none"></div>
+            <div id="questions" style="display: none"></div>
 
             <div class="buttons" id="answers" style="display: none">
-
-            <button class="btn" id="btn0">
-                <span class="choices choice0" data-number="0">A</span>
-            </button>
-            <button class="btn" id="btn2">
+<!-- withoutspan -->
+            <button class="btn" id="0">A</button>
+<!-- withspan -->
+            <button class="btn" id="1">
                 <span class="choices choice1" data-number="0">B</span>
             </button>
-            <button class="btn" id="btn3">
+            <button class="btn" id="2">
                 <span class="choices choice2" data-number="0">C</span>
             </button>
             </div> 
 
-            <p id="countDown"></p>
+            <p id="countDown">
+            </p>
+
             <div id="results" style="display: none">Wrong/Correct</div>
         </div>
     </section>
