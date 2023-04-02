@@ -46,7 +46,7 @@ function startQuiz () {
     score = 0;
     currentQIndex = 0;
     // questions = [...questions];
-    renderQs();
+
     // console.log(questions);
     countDown();
 };
@@ -146,28 +146,31 @@ function evaluate(){
 const questions = [
     {
         question: "Inside which HTML element do we put the JavaScript?",
-        answers: [
-            { text: "<script>", correct: true },
-            { text: "<javascript>", correct: false },
-            { text: "<js>", correct: false }
+        choices: [
+        "a. <script>",
+        "b. <javascript>",
+        "c. <js>"
         ],
+        answer: "a. <script>"
     },
     {
         question: "What is the correct syntax for referring to an external script called 'xxx.js'?",
-        "answers": [
-            { text: "<script href='xxx.js'>", correct: false},
-            { text: "<script name='xxx.js'>", correct: true},
-            { text: "<script src='xxx.js'>", correct: false}
+        choices: [
+            "a. <script href='xxx.js'>",
+            "b. <script name='xxx.js'>", 
+            "c. <script src='xxx.js'>"
         ],
+        answer: "c. <script src='xxx.js'>"
     
     },
     {
         question: " How do you write 'Hello World' in an alert box?",
-        "answers": [
-            { tet: "msgBox('Hello World');", correct: true },
-            { text :"alertBox('Hello World');", correct: false}, 
-            { text :"alert('Hello World');", correct: false}
+        choices: [
+            "a. msgBox('Hello World');",
+            "b. alertBox('Hello World');",
+            "c. alert('Hello World');"
         ],
+        answer: "c. alert('Hello World');"
     }
 ];
 
@@ -177,3 +180,7 @@ const questions = [
 // displayQuestion();
 
 
+//event listeners
+choiceA.addEventListener("click", chooseA);
+choiceB.addEventListener("click", chooseB);
+choiceC.addEventListener("click", chooseC);
