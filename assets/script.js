@@ -53,9 +53,16 @@ function startQuiz () {
     // renderQs();
     // console.log(questions);
     countDown();
+    renderQs();
 
 };
 
+function renderQs() {
+    questionEl.textContent = questions[currentQIndex].question;
+    choiceA.textContent = questions[currentQIndex].choices[0];
+    choiceB.textContent = questions[currentQIndex].choices[1];
+    choiceC.textContent = questions[currentQIndex].choices[2];
+};
 
 //FUNCTION render question
 // function renderQs() {
@@ -115,12 +122,6 @@ function countDown(){
 
 
 
-// function renderQs() {
-//     questions.textContent = questions[currentQIndex].question;
-//     choiceA.textContent = questions[currentQIndex].choices[0];
-//     choiceB.textContent = questions[currentQIndex].choices[1];
-//     choiceC.textContent = questions[currentQIndex].choices[2];
-// }
 
 
 // function guess(id, guess) {
