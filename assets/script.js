@@ -202,11 +202,11 @@ const questions = [
     {
         question: "What is the correct syntax for referring to an external script called 'xxx.js'?",
         choices: [
-            "a. <script href='xxx.js'>",
-            "b. <script name='xxx.js'>", 
-            "c. <script src='xxx.js'>"
+            "a. <script href='script.js'>",
+            "b. <script name='script.js'>", 
+            "c. <script src='script.js'>"
         ],
-        answer: "c. <script src='xxx.js'>"
+        answer: "c. <script src='script.js'>"
     
     },
     {
@@ -217,5 +217,23 @@ const questions = [
             "c. alert('Hello World');"
         ],
         answer: "c. alert('Hello World');"
+    },
+    {
+        question: "What indicates an Array in Javascript?",
+        choices: [
+            "a. array = []",
+            "b. array()",
+            "c. array = {}"
+        ],
+        answer: "a. array = []"
+    },
+    {
+        question: " Which of the following is NOT a javascript function?",
+        choices: [
+            "a. const multiply = (a,b) => a*b;",
+            "b. function dog() = return 'WOOF';",
+            "c. function sayHello(name) `{return ${name}`;}"
+        ],
+        answer: "b. function dog() = return 'WOOF';"
     }
 ];
