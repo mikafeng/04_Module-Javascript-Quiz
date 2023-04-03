@@ -21,13 +21,13 @@ var submitScoreBtn = document.getElementById("submitScore");
 var finalScore = document.getElementById("finalScore");
 var highscores=[];
 var scoresEl = document.getElementById("highScores");
+var scoreListEl = document.getElementById("scoresList")
 
 //changing variables
 var currentQIndex;
 var timeLeft = 60;
 var questionCount = 0;
 var score = 0;
-
 
 
 //FUNCTION hide element
@@ -69,8 +69,8 @@ function countDown(){
     
     if(timeLeft === 0) {
         clearInterval(timerInterval);
-        displayMessage("quiz over");
-        }   
+        quizOver();
+    }   
 }, 1000)};
 
 //render question and choices 
@@ -85,8 +85,11 @@ function renderQs() {
 function checkAnswer(answer) {
     if (questions[currentQIndex].answer === questions[currentQIndex].choices[answer]) {
         result.textContent = "Correct!";
+        score += 10;
     } else {
         result.textContent = "Wrong...";
+        timeLeft -= 10;
+
     }
 
     currentQIndex++
@@ -107,7 +110,9 @@ choiceA.addEventListener("click", chooseA);
 choiceB.addEventListener("click", chooseB);
 choiceC.addEventListener("click", chooseC);
 
+//render scores page
 function quizOver(){
+    hide(quizContainer);
     hide(questionEl);
     hide(choicesEl);
     hide(result);
@@ -116,20 +121,37 @@ function quizOver(){
     finalScore.textContent = score;
 }
 
-//enter highscore
-
-submitScoreBtn.addEventListener("click", function(){
+//save highscore
+function submitScore(){
+    if (highscores == 0) {
+         highscores.push(document.getElementById("initials").value + ": " + score);
+    } else {
+    localStorage.getItem("highscores", JSON.parse(highscores));
     highscores.push(document.getElementById("initials").value + ": " + score);
-    // getHighScores();
-});
+    }
 
-//get highscores
+    console.log(highscores)
+    // var scoresArray = localStorage.setItem(savedScores);
+
+    localStorage.setItem("highscores", JSON.stringify(highscores)); 
+    // console.log(scoresArrayString)
+    getHighScores();
+}
+
+
+//render highscores page
 function getHighScores() {
     hide(quizOverEl);
-    show()
+    show(scoresEl);
 
-    finalScore.textContent = score;
-}
+    var savedScores = localStorage.getItem("highscores");
+    console.log(savedScores);
+};
+
+//submit highscore event listener
+submitScoreBtn.addEventListener("click", function(){
+   submitScore();
+});
 
 //QUESTIONS array
 const questions = [
