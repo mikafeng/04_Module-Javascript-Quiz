@@ -71,6 +71,9 @@ function countDown(){
     if(timeLeft === 0) {
         clearInterval(timerInterval);
         quizOver();
+    if(currentQIndex < questionCount.length -1) {
+        quizOver();
+    }
     }   
 }, 1000)};
 
