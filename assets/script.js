@@ -15,13 +15,14 @@ var choiceC = document.getElementById("btn-2");
 
 var result = document.getElementById("checkAnswer");
 
+//changing variables
 var currentQIndex;
 var timeLeft = 60;
-
-
-//Question Variables
 var questionCount = 0;
 var score = 0;
+
+//quiz ends and highschores
+var quizOverEl = document.getElementById("quizOver");
 
 //FUNCTION hide element
 function hide(element) {
@@ -74,6 +75,7 @@ function renderQs() {
     choiceC.textContent = questions[currentQIndex].choices[2];
 };
 
+//check if selected answer correct or wrong
 function checkAnswer(answer) {
     if (questions[currentQIndex].answer === questions[currentQIndex].choices[answer]) {
         result.textContent = "Correct!";
@@ -86,7 +88,7 @@ function checkAnswer(answer) {
         renderQs();
     } else {
         console.log('game over')
-        // quizOver();
+        quizOver();
     }
 };
 
@@ -98,42 +100,20 @@ function chooseC() { checkAnswer(2); }
 choiceA.addEventListener("click", chooseA);
 choiceB.addEventListener("click", chooseB);
 choiceC.addEventListener("click", chooseC);
-// function showQ(question) {
-//     questionEl.innerText = question.question
-//     question.answers.forEach(answer => {
-//         var button = document.createElement('button')
-//         button.innerText = answer.text;
-//         button.classList.add('btn')
-//         if (answer.correct) {
-//             button.dataset.correct = answer.correct
-//         }
-//         button.addEventListener('click', selectAnswer)
-//         answersEl.appendChild(button)
-//     })
-// };
 
-function selectAnswer(e) {
-//     const selectedButton = e.target
-//     const correct = selectedButton.dataset.correct
-//     setStatusClass(document.body, correct)
-//     Array.from(answerButtonsElement.children).forEach(button => {
-//         setStatusClass(button, button.dataset.correct)
-//     })
-//     if (shuffledQuestions.length > currentQuestionIndex + 1) {
-//         nextButton.classList.remove('hide')
-//         console.log('this button got clicked')
-//     } else {
-//         startButton.innerText = 'Restart'
-//         startButton.classList.remove('hide')
-//         console.log('what?')
-//     }
+function quizOver(){
+    hide(questionEl);
+    hide(choicesEl);
+    hide(result);
+    show(quizOverEl);
 }
-
-
 
 //show score
 
-//create quiz questions
+
+//enter highscore
+
+//get highscores
 
 
 //QUESTIONS array
@@ -176,14 +156,3 @@ const questions = [
         answer: "c. alert('Hello World');"
     }
 ];
-
-// let quiz = new Quiz(questions);
-
-//display questions
-// displayQuestion();
-
-
-//event listeners
-// choiceA.addEventListener("click", chooseA);
-// choiceB.addEventListener("click", chooseB);
-// choiceC.addEventListener("click", chooseC);
