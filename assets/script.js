@@ -22,6 +22,7 @@ var finalScore = document.getElementById("finalScore");
 var highscores=[];
 var scoresEl = document.getElementById("highScores");
 var scoreListEl = document.getElementById("scoresList")
+var viewScores = document.getElementById("viewScores");
 
 //changing variables
 var currentQIndex;
@@ -167,6 +168,12 @@ function getHighScores() {
 //submit highscore event listener
 submitScoreBtn.addEventListener("click", function(){
    submitScore();
+});
+
+viewScores.addEventListener("click", function(event) {
+    hide(quizContainer);
+    hide(startBtn);
+    getHighScores(event);
 });
 
 //QUESTIONS array

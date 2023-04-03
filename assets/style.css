@@ -1,6 +1,11 @@
 body {
     background-color: white
+    
   }
+
+.jumbotron {
+  background-color: rgba(62, 75, 144, 0.5);
+}
 
 h1 {
     margin: auto; 

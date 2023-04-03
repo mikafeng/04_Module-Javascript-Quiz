@@ -11,13 +11,18 @@
 </head>
 
 <body>
-    <div class="jumbotron jumbotron-fluid b"> 
+    <div class="jumbotron jumbotron-fluid"> 
         <h1 class="title">JavaScript Quiz</h1>
+            <div class="row m-2">
+                <p class="list-group-item">
+                <a href="#" class="text-dark" id="viewScores">View High Scores</a>
+                </p>
+            </div>
     </div>
 
     <section class="container">
         <div class="quiz-box " id="quiz">
-            <button id="startBtn" class="btn btn-warning btn-lg btn-block">START</button>
+            <button id="startBtn" class="btn btn-lg btn-block text-center">START</button>
       
 
             <div id="choices" class="row justify-content-center" style="display: none">
@@ -44,7 +49,7 @@
 
         <div id="highScores" style="display: none">
             <h2>High Scores:</h2>
-            <ol id="scoresList">
+            <ol class="list-group-item" id="scoresList">
                 
             </ol>
         </div>
