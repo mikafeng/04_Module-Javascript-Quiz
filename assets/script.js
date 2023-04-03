@@ -15,14 +15,20 @@ var choiceC = document.getElementById("btn-2");
 
 var result = document.getElementById("checkAnswer");
 
+//END quiz and HIGHSCORES
+var quizOverEl = document.getElementById("quizOver");
+var submitScoreBtn = document.getElementById("submitScore");
+var finalScore = document.getElementById("finalScore");
+var highscores=[];
+var scoresEl = document.getElementById("highScores");
+
 //changing variables
 var currentQIndex;
 var timeLeft = 60;
 var questionCount = 0;
 var score = 0;
 
-//quiz ends and highschores
-var quizOverEl = document.getElementById("quizOver");
+
 
 //FUNCTION hide element
 function hide(element) {
@@ -106,15 +112,24 @@ function quizOver(){
     hide(choicesEl);
     hide(result);
     show(quizOverEl);
+
+    finalScore.textContent = score;
 }
-
-//show score
-
 
 //enter highscore
 
-//get highscores
+submitScoreBtn.addEventListener("click", function(){
+    highscores.push(document.getElementById("initials").value + ": " + score);
+    // getHighScores();
+});
 
+//get highscores
+function getHighScores() {
+    hide(quizOverEl);
+    show()
+
+    finalScore.textContent = score;
+}
 
 //QUESTIONS array
 const questions = [
