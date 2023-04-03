@@ -149,6 +149,19 @@ function getHighScores() {
 
     var savedScores = localStorage.getItem("highscores");
     console.log(savedScores);
+    if (savedScores === null) {
+        return;
+    } else {
+        var writeScores = JSON.parse(savedScores);
+        console.log(writeScores)
+    }
+
+    for (i = 0; i < writeScores.length; i++) {
+        var singleScore = document.createElement("p");
+        singleScore.innerHTML = writeScores[i];
+        scoreListEl.appendChild(singleScore);
+    }
+    
 };
 
 //submit highscore event listener
