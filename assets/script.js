@@ -123,17 +123,20 @@ function quizOver(){
 
 //save highscore
 function submitScore(){
-    if (highscores == 0) {
-         highscores.push(document.getElementById("initials").value + ": " + score);
+    var savedScores = localStorage.getItem("highscores");
+
+
+    if (savedScores === null) {
+         return;
     } else {
-    localStorage.getItem("highscores", JSON.parse(highscores));
-    highscores.push(document.getElementById("initials").value + ": " + score);
+     highscores = JSON.parse(savedScores)
     }
 
+    highscores.push(document.getElementById("initials").value + ": " + score);
     console.log(highscores)
     // var scoresArray = localStorage.setItem(savedScores);
-
-    localStorage.setItem("highscores", JSON.stringify(highscores)); 
+    var scoresArrayString = JSON.stringify(highscores)
+    localStorage.setItem("highscores", scoresArrayString); 
     // console.log(scoresArrayString)
     getHighScores();
 }
