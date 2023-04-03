@@ -13,6 +13,7 @@ At the end of the quiz, either when the time or questions run out, users may ent
 Click HERE to open up the quiz in your browser.
 
 ## View
+<img width="1228" alt="Screen Shot 2023-04-03 at 9 30 24 AM" src="https://user-images.githubusercontent.com/110942241/229524730-49185c6b-8be2-4fd6-b5c4-41d193e74d25.png">
 
 
 ## License
