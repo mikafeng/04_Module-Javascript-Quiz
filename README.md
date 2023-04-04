@@ -2,6 +2,8 @@
 
 This is a quiz application on the browser to test users on their knowledge of Javascript.
 
+Take the quiz! https://mikafeng.github.io/04_Module-Javascript-Quiz/
+
 ## Description
 
 The application begins a timer when the user clicks the start button to begin the quiz.
